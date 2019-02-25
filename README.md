@@ -1,0 +1,2 @@
+# teratail176225
+SetLayeredWindowAttributesの透過領域のメッセージについて
