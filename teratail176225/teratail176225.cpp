@@ -94,6 +94,10 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
 	}
 	break;
 
+	case WM_LBUTTONDOWN:
+		PostMessage(hwnd, WM_NCLBUTTONDOWN, HTCAPTION, NULL);
+		break;
+
 	case WM_PAINT:
 	{
 		PAINTSTRUCT ps;
@@ -105,10 +109,6 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
 		EndPaint(hwnd, &ps);
 	}
 	break;
-
-	case WM_LBUTTONDOWN:
-		PostMessage(mhwnd, WM_NCLBUTTONDOWN, HTCAPTION, NULL);
-		return 0;
 
 	case WM_APP + WM_LBUTTONDOWN - WM_MOUSEFIRST:
 	{
